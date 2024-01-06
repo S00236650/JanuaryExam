@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JanuaryExam
 {
-    internal class BudgetItem : IComparable<BudgetItem>
+    internal class BudgetItem
     {
         public string Name { get; set; }
         public decimal Amount { get; set; }
@@ -15,10 +15,5 @@ namespace JanuaryExam
         public bool Recurring { get; set; }
 
         public BudgetItem() { }
-
-        public int CompareTo(BudgetItem other)
-        {
-            
-        }
     }
 }
