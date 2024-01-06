@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="27,51,544,123"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="314,51,257,123"/>
+        <TextBox HorizontalAlignment="Left" Margin="638,51,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="638,121,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <DatePicker HorizontalAlignment="Left" Margin="638,82,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Income" HorizontalAlignment="Left" Margin="638,157,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Expense" HorizontalAlignment="Left" Margin="709,157,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Recurring" HorizontalAlignment="Left" Margin="638,181,0,0" VerticalAlignment="Top"/>
+        <Button Content="Remove" HorizontalAlignment="Left" Margin="638,222,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="709,222,0,0" VerticalAlignment="Top" Width="46"/>
+        <TextBlock HorizontalAlignment="Left" Margin="27,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"><Run Language="en-ie" Text="Income"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="314,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"><Run Language="en-ie" Text="Expenses"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="580,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ie" Text="Name"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="580,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ie" Text="Date"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="580,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ie" Text="Amount"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="27,327,0,0" TextWrapping="Wrap" Text="Total Income" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="314,327,0,0" TextWrapping="Wrap" Text="Total Outgoings" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="210,327,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="504,327,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="27,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ie" Text="Current Balance"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="210,358,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="27,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ie" Text="Search"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Margin="136,389,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>
