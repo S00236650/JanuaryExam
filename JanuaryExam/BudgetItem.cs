@@ -8,12 +8,14 @@ namespace JanuaryExam
 {
     internal class BudgetItem
     {
+        // Variables
         public string Name { get; set; }
         public decimal Amount { get; set; }
         public enum ItemType { Income, Expense }
         public DateTime Date { get; set; }
         public bool Recurring { get; set; }
 
+        // CTORS
         public BudgetItem() { }
     }
 }

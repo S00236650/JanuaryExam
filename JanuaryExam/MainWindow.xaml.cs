@@ -20,13 +20,21 @@ namespace JanuaryExam
     /// </summary>
     public partial class MainWindow : Window
     {
+        /*
+                                                                Github Link: https://github.com/S00236650/JanuaryExam
+        */
+
+        // Variables
         decimal totalIncome = 0;
         decimal totalExpense = 0;
 
         public MainWindow()
         {
             InitializeComponent();
+            // Making sure one of the radio buttons are checked on startup
             rbIncome.IsChecked = true;
+
+            // Adding income
             BudgetItem grant = new BudgetItem() { Name = "Grant", Amount = 300, Date = new DateTime(2024, 1, 5), Recurring = true };
             lbxIncome.Items.Add(grant.Date.Day.ToString() + " : " + grant.Name + " " + grant.Amount.ToString() + " - (Reccuring)");
             totalIncome+= grant.Amount;
@@ -36,6 +44,8 @@ namespace JanuaryExam
             BudgetItem wages = new BudgetItem() { Name = "Wages", Amount = 100, Date = new DateTime(2024, 1, 25), Recurring = true };
             lbxIncome.Items.Add(wages.Date.Day.ToString() + " : " + wages.Name + " " + wages.Amount.ToString() + " - (Reccuring)");
             totalIncome += wages.Amount;
+
+            // Adding expenses
             BudgetItem rent = new BudgetItem() { Name = "Rent", Amount = 400, Date = new DateTime(2024, 1, 1), Recurring = true };
             lbxExpense.Items.Add(rent.Date.Day.ToString() + " : " + rent.Name + " " + rent.Amount.ToString() + " - (Reccuring)");
             totalExpense += rent.Amount;
@@ -49,18 +59,21 @@ namespace JanuaryExam
             lbxExpense.Items.Add(spotify.Date.Day.ToString() + " : " + spotify.Name + " " + spotify.Amount.ToString() + " - (Reccuring)");
             totalExpense += spotify.Amount;
 
+            // Updating total income and expense text
             tblkIncome.Text = totalIncome.ToString();
             tblkExpense.Text = totalExpense.ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Variables
             string name;
             string amountString;
             decimal amount;
             DateTime date;
             bool recurring;
 
+            // Setting Variables
             name = tbxName.Text;
             amountString = tbxAmount.Text;
             date = dtpckDate.DisplayDate;
@@ -69,7 +82,7 @@ namespace JanuaryExam
             else
                 recurring = false;
 
-            if(name != "" && decimal.TryParse(amountString, out amount) == true)
+            if(name != "" && decimal.TryParse(amountString, out amount) == true) // Checking the name isn't empty and that a valid amount is added
             {
                 if (rbIncome.IsChecked == true)
                 {
@@ -98,13 +111,15 @@ namespace JanuaryExam
 
         private void rbIncome_Checked(object sender, RoutedEventArgs e)
         {
+            // Unchecking expense radio button if income is checked
             if(rbIncome.IsChecked == true)
                 rbExpense.IsChecked = false;
         }
 
         private void rbExpense_Checked(object sender, RoutedEventArgs e)
         {
-            if(rbExpense.IsChecked == true)
+            // Unchecking income radio button if expense is checked
+            if (rbExpense.IsChecked == true)
                 rbIncome.IsChecked = false;
         }
     }
